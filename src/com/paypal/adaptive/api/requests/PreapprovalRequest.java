@@ -28,7 +28,7 @@ import com.paypal.adaptive.exceptions.RequestFailureException;
 
 /**
  * Preaproval API provides way to obtain preapprovals, which are an approval to make future payments on the
-sender’s behalf.
+senders behalf.
  * 
  */
 public class PreapprovalRequest extends PayPalBaseRequest{
