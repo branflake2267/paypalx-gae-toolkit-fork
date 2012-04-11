@@ -33,7 +33,7 @@ public abstract class PayPalBaseRequest {
 
 	protected ServiceEnvironment env;
 	protected RequestEnvelope requestEnvelope;
-	public static int HTTP_CONNECTION_TIMEOUT = 3000;
+	public static int HTTP_CONNECTION_TIMEOUT = 15000;
 	public static int HTTP_READ_TIMEOUT = 7000;
 	public static boolean DISABLE_SSL_CERT_CHECK = false;
 
