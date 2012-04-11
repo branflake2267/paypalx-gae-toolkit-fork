@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GuestBook</title>
+<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body>
+    {% if response %}
+    	{{ response }}
+    	{% comment %}
+    		{% for key in response.items %}
+      			<li>{{ key.0 }} - {{ key.1 }}</li>
+	    	{% endfor %}
+    	{% endcomment %}
+    {% endif %}
+    <br/>
+    <a href="{{ paymentDetailsLink }}">{{ paymentDetailsLink }}</a>
+    <br/>
+    <br/>
+    <a href="{{ paymentAuthZUrl }}">{{ paymentAuthZUrl }}</a>
+    <br/>
+    
+    <form action="/Preapproval" method="post">
+    	<div>endingDate: <input type="text" name="endingDate" value="2010-12-15"/></div>
+    	<div>startingDate:<input type="text" name="startingDate" value="{{ curr_date }}"/></div>
+        <div>maxTotalAmountOfAllPayments:<input type="text" name="maxTotalAmountOfAllPayments" value="1000.00"/></div>
+        <div>currencyCode:<select name="currencyCode"><option>USD</option><option>EUR</option><option>AUD</option></select></div>
+        <div>Sender Email:<input type="text" name="senderEmail" value="ppalav_1260941775_per@yahoo.com"/></div>
+		
+      <div><input type="submit" value="Get Preapproval"></div>
+    </form>
+    {% include "nav.html" %}
+  </body>
+
+</html>

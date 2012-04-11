@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-analytics-2.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-analytics-meta-2.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-appsforyourdomain-1.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-appsforyourdomain-meta-1.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-base-1.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-blogger-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-blogger-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-books-1.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-books-meta-1.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-calendar-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-calendar-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-client-1.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-client-meta-1.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-codesearch-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-codesearch-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-contacts-3.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-contacts-meta-3.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-core-1.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-docs-3.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-docs-meta-3.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-finance-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-finance-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-gtt-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-gtt-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-health-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-health-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-maps-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-maps-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-media-1.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-photos-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-photos-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-projecthosting-2.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-projecthosting-meta-2.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-sidewiki-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-sidewiki-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-sites-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-sites-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-spreadsheet-3.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-spreadsheet-meta-3.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-webmastertools-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-webmastertools-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-youtube-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-youtube-meta-2.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/google-collect-1.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/war/WEB-INF/lib/PayPalXGAEToolkit-1.0.jar!/" />
+    <conelement value="com.google.appengine.eclipse.core.GAE_CONTAINER" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/war/WEB-INF/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library">
+      <library name="gdata-analytics-2.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-analytics-2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-analytics-meta-2.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-analytics-meta-2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-appsforyourdomain-1.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-appsforyourdomain-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-appsforyourdomain-meta-1.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-appsforyourdomain-meta-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-base-1.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-base-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-blogger-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-blogger-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-blogger-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-blogger-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-books-1.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-books-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-books-meta-1.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-books-meta-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-calendar-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-calendar-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-calendar-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-calendar-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-client-1.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-client-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-client-meta-1.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-client-meta-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-codesearch-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-codesearch-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-codesearch-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-codesearch-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-contacts-3.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-contacts-3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-contacts-meta-3.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-contacts-meta-3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-core-1.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-core-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-docs-3.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-docs-3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-docs-meta-3.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-docs-meta-3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-finance-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-finance-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-finance-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-finance-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-gtt-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-gtt-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-gtt-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-gtt-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-health-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-health-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-health-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-health-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-maps-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-maps-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-maps-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-maps-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-media-1.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-media-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-photos-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-photos-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-photos-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-photos-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-projecthosting-2.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-projecthosting-2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-projecthosting-meta-2.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-projecthosting-meta-2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-sidewiki-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-sidewiki-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-sidewiki-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-sidewiki-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-sites-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-sites-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-sites-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-sites-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-spreadsheet-3.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-spreadsheet-3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-spreadsheet-meta-3.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-spreadsheet-meta-3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-webmastertools-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-webmastertools-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-webmastertools-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-webmastertools-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-youtube-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-youtube-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gdata-youtube-meta-2.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/gdata-youtube-meta-2.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="google-collect-1.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/google-collect-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="com.google.appengine.eclipse.core.GAE_CONTAINER" level="application" />
+    <orderEntry type="module-library">
+      <library name="PayPalXGAEToolkit-1.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/war/WEB-INF/lib/PayPalXGAEToolkit-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+

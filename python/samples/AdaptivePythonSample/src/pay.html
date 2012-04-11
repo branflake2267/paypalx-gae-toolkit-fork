@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GuestBook</title>
+<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body>
+    {% if response %}
+    	{{ response }}
+    	{% comment %}
+    		{% for key in response.items %}
+      			<li>{{ key.0 }} - {{ key.1 }}</li>
+	    	{% endfor %}
+    	{% endcomment %}
+    {% endif %}
+    <br/>
+    <a href="{{ paymentDetailsLink }}">{{ paymentDetailsLink }}</a>
+    <br/>
+    <br/>
+    <a href="{{ paymentAuthZUrl }}">{{ paymentAuthZUrl }}</a>
+    <br/>
+    
+    <form action="/Pay" method="post">
+    	<div>ActionType:<select name="actionType"><option>PAY</option><option>PAY_PRIMARY</option><option>CREATE</option></select></div>
+    	<div>Payment Model: <select name="paymentModel"><option>Parallel</option><option>Chained</option></select></div>
+    	<div>paymentType: <input type="text" name="paymentType" value="GOODS"/></div>
+        <div>currencyCode:<select name="currencyCode"><option>USD</option><option>EUR</option><option>AUD</option></select></div>
+    	<div>Receiver 1 Email:<input type="text" name="receiver_email1" value="ppalav_1260515409_biz@yahoo.com"/></div>
+        <div>Receiver 1 Amount:<input type="text" name="receiver_amount1" value="100.00"/></div>
+        <div>Receiver 2 Email:<input type="text" name="receiver_email2" value="pp+sel_1261964325_biz@yahoo.com"/></div>
+        <div>Receiver 2 Amount:<input type="text" name="receiver_amount2" value="10.00"/></div>
+        <div>Primary Receiver: <input type="radio" name="primary" value="receiver1" /> Receiver1 <input type="radio" name="primary" value="receiver2" /> Receiver2</div>
+    	<div>Sender Email:<input type="text" name="senderEmail" value="ppalav_1260941775_per@yahoo.com"/></div>
+		<div>FeePayer: <select name="feesPayer"><option>EACHRECEIVER</option><option>PRIMARYRECEIVER</option><option>SENDER</option><option>SECONDARYONLY</option></select></div>
+		<div>preapprovalKey: <input type="text" name="preapprovalKey" value=""/></div>
+		
+      <div><input type="submit" value="Send Pay Request"></div>
+    </form>
+    {% include "nav.html" %}
+  </body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GuestBook</title>
+<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body>
+    {% if response %}
+    	{{ response }}
+    	{% comment %}
+    		{% for key in response.items %}
+      			<li>{{ key.0 }} - {{ key.1 }}</li>
+	    	{% endfor %}
+    	{% endcomment %}
+    {% endif %}
+    <form action="/Transaction" method="post">
+      <div>user_phone: <input type="text" name="user_phone" value=""/></div>
+      <div>catalog id: <input type="text" name="catalog_id" value=""/></div>
+      <div>product id: <input type="text" name="product_id" value=""/></div>      
+      <div><input type="submit" value="Create Transaction"></div>
+    </form>
+    
+  </body>
+
+</html>

@@ -1,0 +1,60 @@
+<project name="PayPalXGAEToolkit" basedir="." default="all" >
+
+  <property name="root.dir" value="." />
+  <property name="lib.name" value="PayPalXGAEToolkit"/>
+  <property name="lib.version"   value="1.0"/>
+  <property name="src.dir" value="${root.dir}/src" />
+  <property name="classes.dir" value="${root.dir}/lib" />
+  <property name="dist.dir" value="${root.dir}/dist" />
+  <property name="docs.dir" value="${root.dir}/javadoc" />
+
+  <target name="usage">
+    <echo message="Usage: ant all" />
+  </target>
+
+  <path id="class.path">
+    <pathelement location="${classes.dir}"/>
+  </path>
+
+  <target name="all" depends="clean,build,build.jar" />
+
+  <target name="clean">
+    <delete dir="${classes.dir}" />
+    <delete dir="${dist.dir}" />
+    <delete dir="${docs.dir}" />
+  </target>
+
+  <target name="build">
+    <mkdir dir="${classes.dir}" />
+
+        <condition property="ant.build.javac.target" value="${compileTarget}">
+            <isset property="compileTarget" />
+        </condition>
+
+        <javac srcdir="${src.dir}"
+           destdir="${classes.dir}"
+           classpathref="class.path"
+           debug="on" >
+    </javac>
+  </target>
+
+  <target name="build.jar" depends="build">
+    <mkdir dir="${dist.dir}" />
+    <jar jarfile="${dist.dir}/${lib.name}-${lib.version}.jar"
+      basedir="${classes.dir}" />
+
+  </target>
+
+  <target name="javadoc" depends="build"
+   description="Create Javadoc API documentation">
+
+    <mkdir dir="${docs.dir}"/>
+    <javadoc sourcepath="${src.dir}"
+                destdir="${docs.dir}"
+           packagenames="*">
+      <classpath refid="class.path"/>
+    </javadoc>
+
+  </target>
+</project>
+

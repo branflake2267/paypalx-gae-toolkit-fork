@@ -1,0 +1,5 @@
+com.paypal.adaptive.api.requests
+com.paypal.adaptive.api.requests.fnapi
+com.paypal.adaptive.api.responses
+com.paypal.adaptive.core
+com.paypal.adaptive.exceptions
