@@ -94,7 +94,7 @@ public class PreapprovedParallelPay {
      */
     public PreapprovedParallelPay(String preapprovalKey, int numberOfReceivers) 
     throws NotEnoughReceivers, MissingParameterException{
-    	if(numberOfReceivers < 2){
+    	if(numberOfReceivers <= 2){
     		// throw exception
     		throw new NotEnoughReceivers(2, numberOfReceivers);
     	}
