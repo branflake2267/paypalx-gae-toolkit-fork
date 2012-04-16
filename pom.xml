@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>paypalx-gae-toolkit-fork</groupId>
+	<groupId>com.paypal.adaptive</groupId>
 	<artifactId>paypalx-gae-toolkit-fork</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>PayPal Adaptive Api</name>
@@ -58,6 +58,7 @@
 
 		<!-- Plugins needed for building -->
 		<plugins>
+		
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.6</version>
