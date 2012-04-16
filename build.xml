@@ -2,10 +2,10 @@
 
   <property name="root.dir" value="." />
   <property name="lib.name" value="PayPalXGAEToolkit"/>
-  <property name="lib.version"   value="1.0"/>
+  <property name="lib.version"   value="1.0-SNAPSHOT"/>
   <property name="src.dir" value="${root.dir}/src" />
   <property name="classes.dir" value="${root.dir}/lib" />
-  <property name="dist.dir" value="${root.dir}/dist" />
+  <property name="dist.dir" value="${root.dir}/snapshots" />
   <property name="docs.dir" value="${root.dir}/javadoc" />
 
   <target name="usage">
