@@ -20,7 +20,8 @@
 		<url>https://git@github.com/branflake2267/paypalx-gae-toolkit-fork.git</url>
 	</scm>
 
-    <!-- ./mvn -DaltDeploymentRepository=snapshot-repo::default::file:../BranflakeMavenRepo/snapshots/ clean deploy -->
+    <!-- To deploy into the my maven repo use command on next line ran in the pom.xml directory -->
+	<!-- mvn -DaltDeploymentRepository=snapshot-repo::default::file:../BranflakeMavenRepo/snapshots/ clean deploy -->
 	<!-- Directions for github maven repo: http://cemerick.com/2010/08/24/hosting-maven-repos-on-github/ -->
 	<distributionManagement>
 		<repository>
