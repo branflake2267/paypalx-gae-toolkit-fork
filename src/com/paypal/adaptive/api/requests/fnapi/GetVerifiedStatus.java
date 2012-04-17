@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.paypal.adaptive.api.requests.fnapi;
 
 import java.io.IOException;

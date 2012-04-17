@@ -5,17 +5,12 @@ import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.paypal.adaptive.api.responses.GetVerifiedStatusResponse;
-import com.paypal.adaptive.api.responses.RefundResponse;
 import com.paypal.adaptive.core.APICredential;
-import com.paypal.adaptive.core.CurrencyCodes;
 import com.paypal.adaptive.core.ParameterUtils;
-import com.paypal.adaptive.core.Receiver;
 import com.paypal.adaptive.core.RequestEnvelope;
 import com.paypal.adaptive.core.ServiceEnvironment;
 import com.paypal.adaptive.core.accounts.MatchCriteria;
@@ -31,7 +26,6 @@ import com.paypal.adaptive.exceptions.RequestFailureException;
  * 
  */
 public class GetVerifiedStatusRequest extends PayPalBaseRequest {
-
     private static final Logger log = Logger.getLogger(GetVerifiedStatusRequest.class.getName());
 
     private String emailAddress;

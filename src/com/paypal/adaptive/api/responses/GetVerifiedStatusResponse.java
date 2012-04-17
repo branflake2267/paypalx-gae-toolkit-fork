@@ -7,10 +7,7 @@ import java.beans.PropertyDescriptor;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.paypal.adaptive.core.AckCode;
-import com.paypal.adaptive.core.CurrencyCodes;
 import com.paypal.adaptive.core.PayError;
-import com.paypal.adaptive.core.RefundInfo;
 import com.paypal.adaptive.core.ResponseEnvelope;
 import com.paypal.adaptive.core.accounts.AccountStatus;
 import com.paypal.adaptive.core.accounts.CountryCode;
@@ -41,8 +38,6 @@ public class GetVerifiedStatusResponse {
             responseParams.put(field[0], (field.length > 1) ? field[1].trim() : "");
         }
 
-        responseEnvelope = new ResponseEnvelope(responseParams);
-        
         if (responseParams.containsKey("accountStatus")) {
             accountStatus = AccountStatus.fromValue(responseParams.get("accountStatus"));
         }
@@ -51,7 +46,11 @@ public class GetVerifiedStatusResponse {
             countryCode = CountryCode.fromValue(responseParams.get("countryCode"));
         }
         
-        userInfoType = new UserInfoType(responseParams);
+        if (responseParams.containsKey("accountType")) {
+            userInfoType = new UserInfoType(responseParams);
+        }
+        
+        responseEnvelope = new ResponseEnvelope(responseParams);
         
         errorList = new ArrayList<PayError>();
         
