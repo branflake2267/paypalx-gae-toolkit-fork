@@ -1,6 +1,8 @@
 package com.paypal.adaptive.api.requests.fnapi;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +18,6 @@ import com.paypal.adaptive.api.responses.GetVerifiedStatusResponse;
 import com.paypal.adaptive.core.APICredential;
 import com.paypal.adaptive.core.ServiceEnvironment;
 import com.paypal.adaptive.core.accounts.AccountStatus;
-import com.paypal.adaptive.core.accounts.CountryCode;
 import com.paypal.adaptive.core.accounts.MatchCriteria;
 import com.paypal.adaptive.core.accounts.UserInfo;
 import com.paypal.adaptive.exceptions.InvalidAPICredentialsException;
@@ -106,8 +107,6 @@ public class GetVerifiedStatusTest {
         
         assertEquals("Brandon", userInfo.getFirstName());
         assertEquals("Donnelson", userInfo.getLastName());
-        
-        System.out.println("finished");
     }
 
     private APICredential getCredentials() {
