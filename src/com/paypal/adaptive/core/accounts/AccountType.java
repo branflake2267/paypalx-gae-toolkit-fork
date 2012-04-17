@@ -1,7 +1,6 @@
 package com.paypal.adaptive.core.accounts;
 
 public enum AccountType {
-
     PERSONAL,
     PREMIER,
     BUSINESS;
