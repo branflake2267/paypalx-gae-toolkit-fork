@@ -33,26 +33,26 @@ public abstract class PayPalBaseRequest {
             RequestFailureException, IOException {
         String responseString = "";
         try {
-//			if(DISABLE_SSL_CERT_CHECK){
-//				// Create a trust manager that does not validate certificate chains 
-//				TrustManager[] trustAllCerts = new TrustManager[] { 
-//						new X509TrustManager() { 
-//							public java.security.cert.X509Certificate[] getAcceptedIssuers() { return null; } 
-//							public void checkClientTrusted( java.security.cert.X509Certificate[] certs, String authType) { } 
-//							public void checkServerTrusted( java.security.cert.X509Certificate[] certs, String authType) { } 
-//						} };
-//				// Install the all-trusting trust manager 
-//
-//				SSLContext sc = SSLContext.getInstance("TLS");
-//
-//				sc.init(null, trustAllCerts, new java.security.SecureRandom()); 
-//				HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory()); 
-//				HttpsURLConnection.setDefaultHostnameVerifier( new HostnameVerifier(){
-//					public boolean verify(String string,SSLSession ssls) {
-//						return true;
-//					}
-//				});
-//			}
+            //			if(DISABLE_SSL_CERT_CHECK){
+            //				// Create a trust manager that does not validate certificate chains 
+            //				TrustManager[] trustAllCerts = new TrustManager[] { 
+            //						new X509TrustManager() { 
+            //							public java.security.cert.X509Certificate[] getAcceptedIssuers() { return null; } 
+            //							public void checkClientTrusted( java.security.cert.X509Certificate[] certs, String authType) { } 
+            //							public void checkServerTrusted( java.security.cert.X509Certificate[] certs, String authType) { } 
+            //						} };
+            //				// Install the all-trusting trust manager 
+            //
+            //				SSLContext sc = SSLContext.getInstance("TLS");
+            //
+            //				sc.init(null, trustAllCerts, new java.security.SecureRandom()); 
+            //				HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory()); 
+            //				HttpsURLConnection.setDefaultHostnameVerifier( new HostnameVerifier(){
+            //					public boolean verify(String string,SSLSession ssls) {
+            //						return true;
+            //					}
+            //				});
+            //			}
             URL url = new URL(EndPointUrl.get(this.env) + apiMethod);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
