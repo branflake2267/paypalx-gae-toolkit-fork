@@ -105,6 +105,8 @@ public class GetVerifiedStatusRequest extends PayPalBaseRequest {
         if (log.isLoggable(Level.INFO))
             log.info("Sending GetVerifiedStatus with: " + postParameters.toString());
 
+        setUseAdaptiveAccountEndpoint(true);
+        
         // send request
         String responseString = makeRequest(credentialObj, "GetVerifiedStatus", postParameters.toString());
 

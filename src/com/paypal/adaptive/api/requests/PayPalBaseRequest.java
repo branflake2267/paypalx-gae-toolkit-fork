@@ -4,6 +4,7 @@ import com.paypal.adaptive.core.APICredential;
 import com.paypal.adaptive.core.EndPointUrl;
 import com.paypal.adaptive.core.RequestEnvelope;
 import com.paypal.adaptive.core.ServiceEnvironment;
+import com.paypal.adaptive.core.accounts.EndPointUrlAdaptiveAccounts;
 import com.paypal.adaptive.exceptions.InvalidResponseDataException;
 import com.paypal.adaptive.exceptions.MissingParameterException;
 import com.paypal.adaptive.exceptions.RequestFailureException;
@@ -19,49 +20,28 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public abstract class PayPalBaseRequest {
-
     private static final Logger log = Logger.getLogger(PayPalBaseRequest.class.getName());
 
-    protected ServiceEnvironment env;
-    protected RequestEnvelope requestEnvelope;
     public static int HTTP_CONNECTION_TIMEOUT = 15000;
     public static int HTTP_READ_TIMEOUT = 7000;
     public static boolean DISABLE_SSL_CERT_CHECK = false;
+    
+    protected ServiceEnvironment env;
+    protected RequestEnvelope requestEnvelope;
+    
+    private boolean useAdaptiveAccountsEndPoint = false;
 
     protected String makeRequest(APICredential credentialObj, String apiMethod, String postData)
             throws MissingParameterException, InvalidResponseDataException,
             RequestFailureException, IOException {
         String responseString = "";
         try {
-            //			if(DISABLE_SSL_CERT_CHECK){
-            //				// Create a trust manager that does not validate certificate chains 
-            //				TrustManager[] trustAllCerts = new TrustManager[] { 
-            //						new X509TrustManager() { 
-            //							public java.security.cert.X509Certificate[] getAcceptedIssuers() { return null; } 
-            //							public void checkClientTrusted( java.security.cert.X509Certificate[] certs, String authType) { } 
-            //							public void checkServerTrusted( java.security.cert.X509Certificate[] certs, String authType) { } 
-            //						} };
-            //				// Install the all-trusting trust manager 
-            //
-            //				SSLContext sc = SSLContext.getInstance("TLS");
-            //
-            //				sc.init(null, trustAllCerts, new java.security.SecureRandom()); 
-            //				HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory()); 
-            //				HttpsURLConnection.setDefaultHostnameVerifier( new HostnameVerifier(){
-            //					public boolean verify(String string,SSLSession ssls) {
-            //						return true;
-            //					}
-            //				});
-            //			}
-            URL url = new URL(EndPointUrl.get(this.env) + apiMethod);
+            URL url = getEndPointUrl(apiMethod);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
-            // set timeouts
             connection.setConnectTimeout(HTTP_CONNECTION_TIMEOUT);
             connection.setReadTimeout(HTTP_READ_TIMEOUT);
-            // method is always POST
             connection.setRequestMethod("POST");
-            // set HTTP headers
             connection.setRequestProperty("X-PAYPAL-SECURITY-USERID", credentialObj.getAPIUsername());
             connection.setRequestProperty("X-PAYPAL-SECURITY-PASSWORD", credentialObj.getAPIPassword());
             connection.setRequestProperty("X-PAYPAL-SECURITY-SIGNATURE", credentialObj.getSignature());
@@ -90,16 +70,27 @@ public abstract class PayPalBaseRequest {
                 if (log.isLoggable(Level.INFO))
                     log.info("Received Response: " + responseString);
             } else {
-                // Server returned HTTP error code.
                 throw new RequestFailureException(connection.getResponseCode());
             }
         } catch (MalformedURLException e) {
-            // ...
             throw e;
         } catch (IOException e) {
-            // ...
             throw e;
         }
         return responseString;
+    }
+
+    private URL getEndPointUrl(String apiMethod) throws MalformedURLException {
+        URL url = null;
+        if (useAdaptiveAccountsEndPoint == true) {
+            url = new URL(EndPointUrlAdaptiveAccounts.get(env) + apiMethod);    
+        } else {
+            url = new URL(EndPointUrl.get(env) + apiMethod);
+        }
+        return url;
+    }
+    
+    protected void setUseAdaptiveAccountEndpoint(boolean useAdaptiveAccountsEndPoint) {
+        this.useAdaptiveAccountsEndPoint = useAdaptiveAccountsEndPoint;
     }
 }

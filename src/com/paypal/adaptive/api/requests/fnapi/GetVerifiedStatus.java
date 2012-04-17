@@ -3,9 +3,7 @@ package com.paypal.adaptive.api.requests.fnapi;
 import java.io.IOException;
 
 import com.paypal.adaptive.api.requests.GetVerifiedStatusRequest;
-import com.paypal.adaptive.api.requests.RefundRequest;
 import com.paypal.adaptive.api.responses.GetVerifiedStatusResponse;
-import com.paypal.adaptive.api.responses.RefundResponse;
 import com.paypal.adaptive.core.APICredential;
 import com.paypal.adaptive.core.ServiceEnvironment;
 import com.paypal.adaptive.core.accounts.MatchCriteria;
@@ -29,8 +27,9 @@ public class GetVerifiedStatus {
 
     /**
      * Required language for localization
+     * (Required) The RFC 3066 language in which error messages are returned; by default it is en_US, which is the only language currently supported
      */
-    private String language;
+    private String language = "en_US";
 
     /**
      * Required Environment
@@ -72,8 +71,7 @@ public class GetVerifiedStatus {
      * @param lastName Is Required
      * @throws MissingParameterException of the parameter which is missing
      */
-    public GetVerifiedStatus(String emailAddress, String firstName,
-            String lastName, MatchCriteria matchCriteria)
+    public GetVerifiedStatus(String emailAddress, String firstName, String lastName, MatchCriteria matchCriteria)
             throws MissingParameterException {
 
         if (emailAddress == null || emailAddress.length() <= 0)
@@ -120,7 +118,7 @@ public class GetVerifiedStatus {
         this.language = language;
     }
 
-    public void setEnv(ServiceEnvironment env) {
+    public void setServiceEnviroment(ServiceEnvironment env) {
         this.env = env;
     }
 

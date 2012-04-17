@@ -1,22 +1,25 @@
-package com.paypal.adaptive.core;
+package com.paypal.adaptive.core.accounts;
+
+import com.paypal.adaptive.core.ExpType;
+import com.paypal.adaptive.core.ServiceEnvironment;
 
 /**
  * <p>
  * Java class for EndPointUrl.
  */
-public class EndPointUrl {
+public class EndPointUrlAdaptiveAccounts {
 
     public static String get(ServiceEnvironment env) {
         if (env == ServiceEnvironment.PRODUCTION) {
-            return "https://svcs.paypal.com/AdaptivePayments/";
+            return "https://svcs.paypal.com/AdaptiveAccounts/";
         } else if (env == ServiceEnvironment.BETA_SANDBOX) {
-            return "https://svcs.beta-sandbox.paypal.com/AdaptivePayments/";
+            return "https://svcs.beta-sandbox.paypal.com/AdaptiveAccounts/";
         } else if (env == ServiceEnvironment.STAGING) {
             // return
-            // "https://stage2vm5199.sc4.paypal.com:10279/AdaptivePayments/";
-            return "https://stage2vm5258.sc4.paypal.com:10279/AdaptivePayments/";
+            // "https://stage2vm5199.sc4.paypal.com:10279/AdaptiveAccounts/";
+            return "https://stage2vm5258.sc4.paypal.com:10279/AdaptiveAccounts/";
         } else {
-            return "https://svcs.sandbox.paypal.com/AdaptivePayments/";
+            return "https://svcs.sandbox.paypal.com/AdaptiveAccounts/";
         }
     }
 
@@ -45,9 +48,7 @@ public class EndPointUrl {
 
     }
 
-    public static String getEmbeddedAuthorizationUrl(ServiceEnvironment env,
-            ExpType expType) {
-
+    public static String getEmbeddedAuthorizationUrl(ServiceEnvironment env, ExpType expType) {
         StringBuilder url = new StringBuilder();
 
         if (env == ServiceEnvironment.PRODUCTION)

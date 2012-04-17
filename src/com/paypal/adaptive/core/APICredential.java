@@ -6,66 +6,65 @@ package com.paypal.adaptive.core;
 /**
  * Java class for APICredentials
  * @author palavilli
- *
  */
 public class APICredential {
 
-	protected String APIUsername;
-	protected String APIPassword;
-	protected String Signature;
-	protected String AppId;
+	private String apiUsername;
+	private String apiPassword;
+	private String signature;
+	private String appId;
 	/**
 	 * PayPal accountEmail used as the SenderEmail for Implicit Payments (when API Caller is same as Sender)
 	 */
-	protected String accountEmail;
+	private String accountEmail;
 	
 	/**
 	 * @return the aPIUsername
 	 */
 	public String getAPIUsername() {
-		return APIUsername;
+		return apiUsername;
 	}
 	/**
-	 * @param aPIUsername the aPIUsername to set
+	 * @param apiUsername the aPIUsername to set
 	 */
-	public void setAPIUsername(String aPIUsername) {
-		APIUsername = aPIUsername;
+	public void setAPIUsername(String apiUsername) {
+		this.apiUsername = apiUsername;
 	}
 	/**
 	 * @return the aPIPassword
 	 */
 	public String getAPIPassword() {
-		return APIPassword;
+		return apiPassword;
 	}
 	/**
-	 * @param aPIPassword the aPIPassword to set
+	 * @param apiPassword the aPIPassword to set
 	 */
-	public void setAPIPassword(String aPIPassword) {
-		APIPassword = aPIPassword;
+	public void setAPIPassword(String apiPassword) {
+	    this.apiPassword = apiPassword;
 	}
 	/**
 	 * @return the signature
 	 */
 	public String getSignature() {
-		return Signature;
+		return signature;
 	}
 	/**
 	 * @param signature the signature to set
 	 */
 	public void setSignature(String signature) {
-		Signature = signature;
+	    this.signature = signature;
 	}
 	/**
 	 * @return the appId
 	 */
 	public String getAppId() {
-		return AppId;
+		return appId;
 	}
 	/**
 	 * @param appId the appId to set
 	 */
 	public void setAppId(String appId) {
-		AppId = appId;
+	    this.appId = appId;
 	}	
 	/**
 	 * @return the accountEmail

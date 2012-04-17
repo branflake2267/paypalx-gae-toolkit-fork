@@ -11,7 +11,7 @@ import com.paypal.adaptive.core.PayError;
 import com.paypal.adaptive.core.ResponseEnvelope;
 import com.paypal.adaptive.core.accounts.AccountStatus;
 import com.paypal.adaptive.core.accounts.CountryCode;
-import com.paypal.adaptive.core.accounts.UserInfoType;
+import com.paypal.adaptive.core.accounts.UserInfo;
 import com.paypal.adaptive.exceptions.PayPalErrorException;
 
 /**
@@ -26,7 +26,7 @@ public class GetVerifiedStatusResponse {
     
     private AccountStatus accountStatus;
     private CountryCode countryCode;
-    private UserInfoType userInfoType;
+    private UserInfo userInfo;
 
     public GetVerifiedStatusResponse(String responseString) throws PayPalErrorException {
         responseParams = new HashMap<String, String>();
@@ -42,12 +42,13 @@ public class GetVerifiedStatusResponse {
             accountStatus = AccountStatus.fromValue(responseParams.get("accountStatus"));
         }
         
+        // TODO This doesn't exist int he repsponse, but seems to exist in the docs????
         if (responseParams.containsKey("countryCode")) {
             countryCode = CountryCode.fromValue(responseParams.get("countryCode"));
         }
         
-        if (responseParams.containsKey("accountType")) {
-            userInfoType = new UserInfoType(responseParams);
+        if (responseParams.containsKey("userInfo.accountId")) {
+            userInfo = new UserInfo(responseParams);
         }
         
         responseEnvelope = new ResponseEnvelope(responseParams);
@@ -89,8 +90,8 @@ public class GetVerifiedStatusResponse {
         return countryCode;
     }
 
-    public UserInfoType getUserInfoType() {
-        return userInfoType;
+    public UserInfo getUserInfoType() {
+        return userInfo;
     }
 
     /**
