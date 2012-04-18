@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.paypal.adaptive</groupId>
 	<artifactId>paypalx-gae-toolkit-fork</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>PayPal Adaptive Api</name>
 	<description>PayPal Adaptive </description>
 	<url>https://github.com/branflake2267/paypalx-gae-toolkit-fork</url>
