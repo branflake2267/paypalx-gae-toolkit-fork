@@ -1,10 +1,9 @@
 package com.paypal.adaptive.core;
 
 /**
- * <p>Java enum for CurrencyCodes.
+ * Java enum for CurrencyCodes.
  */
 public enum CurrencyCodes {
-
 	AUD,
 	BRL,
 	CAD,

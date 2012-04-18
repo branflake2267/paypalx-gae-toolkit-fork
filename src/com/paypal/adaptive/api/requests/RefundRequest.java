@@ -27,9 +27,8 @@ import com.paypal.adaptive.exceptions.RequestFailureException;
 
 /**
  * Refund API refunds all or part of a payment.
- * 
  */
-public class RefundRequest extends PayPalBaseRequest{
+public class RefundRequest extends PayPalBaseRequest {
 
 	private static final Logger log = Logger.getLogger(RefundRequest.class.getName());
 
@@ -39,8 +38,7 @@ public class RefundRequest extends PayPalBaseRequest{
     protected String trackingId;
     protected List<Receiver> receiverList;
 
-    public RefundRequest(String language, ServiceEnvironment env){
-    	
+    public RefundRequest(String language, ServiceEnvironment env) {
     	requestEnvelope = new RequestEnvelope();
     	requestEnvelope.setErrorLanguage(language);
     	this.env = env;
@@ -48,7 +46,7 @@ public class RefundRequest extends PayPalBaseRequest{
     
     public RefundResponse execute(APICredential credentialObj) 
     throws MissingParameterException, MissingAPICredentialsException, InvalidAPICredentialsException, 
-    PayPalErrorException, RequestFailureException, IOException, InvalidResponseDataException{
+    PayPalErrorException, RequestFailureException, IOException, InvalidResponseDataException {
     	String responseString = "";
     	// do input validation
     	/* - VALIDATE REQUIRED PARAMS- */

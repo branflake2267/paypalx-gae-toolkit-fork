@@ -4,9 +4,9 @@
   <property name="lib.name" value="PayPalXGAEToolkit"/>
   <property name="lib.version"   value="1.0"/>
   <property name="src.dir" value="${root.dir}/src" />
-  <property name="classes.dir" value="${root.dir}/lib" />
-  <property name="dist.dir" value="${root.dir}/target/dist" />
-  <property name="docs.dir" value="${root.dir}/javadoc" />
+  <property name="classes.dir" value="${root.dir}/target/build/bin" />
+  <property name="dist.dir" value="${root.dir}/target/build/dist" />
+  <property name="docs.dir" value="${root.dir}/target/build/javadoc" />
 
   <target name="usage">
     <echo message="Usage: ant all" />
