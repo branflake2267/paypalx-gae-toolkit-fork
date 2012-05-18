@@ -22,8 +22,12 @@ import java.util.logging.Logger;
 public abstract class PayPalBaseRequest {
     private static final Logger log = Logger.getLogger(PayPalBaseRequest.class.getName());
 
+    /**
+     * The sandbox is quite slow and thus long wait times have to be implemented
+     * I've found 7 seconds won't work for the sandbox
+     */
     public static int HTTP_CONNECTION_TIMEOUT = 15000;
-    public static int HTTP_READ_TIMEOUT = 7000;
+    public static int HTTP_READ_TIMEOUT = 15000;
     public static boolean DISABLE_SSL_CERT_CHECK = false;
     
     protected ServiceEnvironment env;
