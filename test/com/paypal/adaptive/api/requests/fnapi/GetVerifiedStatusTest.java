@@ -36,12 +36,12 @@ public class GetVerifiedStatusTest {
     public void setUp() throws Exception {
         URL url = GetVerifiedStatusTest.class.getProtectionDomain().getCodeSource().getLocation();
         String execPath = url.getPath();
-        String pathConfig = execPath.replace("target/classes/", "properties/credentials.properties");
+        String pathConfig = execPath.replace("target/test-classes/", "properties/credentials.properties");
         
         File configurationFile = new File(pathConfig);
         config = new PropertiesConfiguration(configurationFile);
         
-        String pathLog = execPath.replace("target/classes/", "properties/log4j.properties");
+        String pathLog = execPath.replace("target/test-classes/", "properties/log4j.properties");
         PropertyConfigurator.configure(pathLog);
     }
 
