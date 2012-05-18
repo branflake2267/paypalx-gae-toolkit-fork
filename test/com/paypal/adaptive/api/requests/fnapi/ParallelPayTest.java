@@ -1,11 +1,13 @@
 package com.paypal.adaptive.api.requests.fnapi;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
@@ -14,27 +16,32 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.paypal.adaptive.api.responses.GetVerifiedStatusResponse;
+import com.paypal.adaptive.api.responses.PayResponse;
 import com.paypal.adaptive.core.APICredential;
+import com.paypal.adaptive.core.CurrencyCodes;
+import com.paypal.adaptive.core.PaymentType;
+import com.paypal.adaptive.core.Receiver;
 import com.paypal.adaptive.core.ServiceEnvironment;
-import com.paypal.adaptive.core.accounts.AccountStatus;
-import com.paypal.adaptive.core.accounts.MatchCriteria;
-import com.paypal.adaptive.core.accounts.UserInfo;
+import com.paypal.adaptive.exceptions.AuthorizationRequiredException;
 import com.paypal.adaptive.exceptions.InvalidAPICredentialsException;
 import com.paypal.adaptive.exceptions.InvalidResponseDataException;
 import com.paypal.adaptive.exceptions.MissingAPICredentialsException;
 import com.paypal.adaptive.exceptions.MissingParameterException;
+import com.paypal.adaptive.exceptions.NotEnoughReceivers;
 import com.paypal.adaptive.exceptions.PayPalErrorException;
+import com.paypal.adaptive.exceptions.PaymentExecException;
+import com.paypal.adaptive.exceptions.PaymentInCompleteException;
+import com.paypal.adaptive.exceptions.ReceiversCountMismatchException;
 import com.paypal.adaptive.exceptions.RequestAlreadyMadeException;
 import com.paypal.adaptive.exceptions.RequestFailureException;
 
-public class GetVerifiedStatusTest {
+public class ParallelPayTest {
 
     private PropertiesConfiguration config;
 
     @Before
     public void setUp() throws Exception {
-        URL url = GetVerifiedStatusTest.class.getProtectionDomain().getCodeSource().getLocation();
+        URL url = ParallelPayTest.class.getProtectionDomain().getCodeSource().getLocation();
         String execPath = url.getPath();
         String pathConfig = execPath.replace("target/test-classes/", "properties/credentials.properties");
         
@@ -53,29 +60,49 @@ public class GetVerifiedStatusTest {
 
     @Test
     public void testMakeRequest() {        
-        String emailAddress = "brando_1334696635_per@arcbees.com";
-        String firstName = "Brandon";
-        String lastName = "Donnelson";
-        MatchCriteria matchCriteria = MatchCriteria.NAME;
-        
-        GetVerifiedStatus verifiedStatus = null;
+        ParallelPay pp = null;
         try {
-            verifiedStatus = new GetVerifiedStatus(emailAddress, firstName, lastName, matchCriteria);
-        } catch (MissingParameterException e) {
+            pp = new ParallelPay(2);
+        } catch (NotEnoughReceivers e) {
             e.printStackTrace();
+            assertTrue(false);
+            return;
         }
+        pp.setCancelUrl("http://arcbees.com");
+        pp.setReturnUrl("http://arcbees.com");
+        pp.setUserIp("0.0.0.0");
+        pp.setCredentialObj(getCredentials());
+        pp.setCurrencyCode(CurrencyCodes.USD);
+        pp.setApplicationName("Arcbees Testing");
+        pp.setLanguage("en_US");
+        pp.setMemo("Testing parallel pay");
+        pp.setSenderEmail(config.getString("senderEmail"));
+        pp.setEnv(ServiceEnvironment.SANDBOX);
         
-        verifiedStatus.setServiceEnviroment(ServiceEnvironment.SANDBOX);
-        verifiedStatus.setCredentialObj(getCredentials());
-        verifiedStatus.setLanguage("en_US");
+        Receiver receiver1 = new Receiver();
+        receiver1.setAmount(10);
+        receiver1.setEmail(config.getString("receiver1"));
+        //receiver1.setInvoiceId(invoiceId);
+        receiver1.setPaymentType(PaymentType.GOODS);
+        pp.addToReceivers(receiver1);
         
-        GetVerifiedStatusResponse response = null;
+        Receiver receiver2 = new Receiver();
+        receiver2.setAmount(10);
+        receiver2.setEmail(config.getString("receiver2"));
+        //receiver1.setInvoiceId(invoiceId);
+        receiver2.setPaymentType(PaymentType.GOODS);
+        pp.addToReceivers(receiver2);
+        
+        PayResponse payResponse = null;
         try {
-            response = verifiedStatus.makeRequest();
-        } catch (MissingParameterException e) {
+            payResponse = pp.makeRequest();
+        } catch (MalformedURLException e) {
             e.printStackTrace();
             fail();
-        } catch (RequestAlreadyMadeException e) {
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            fail();
+        } catch (IOException e) {
             e.printStackTrace();
             fail();
         } catch (MissingAPICredentialsException e) {
@@ -84,7 +111,7 @@ public class GetVerifiedStatusTest {
         } catch (InvalidAPICredentialsException e) {
             e.printStackTrace();
             fail();
-        } catch (PayPalErrorException e) {
+        } catch (MissingParameterException e) {
             e.printStackTrace();
             fail();
         } catch (RequestFailureException e) {
@@ -93,20 +120,27 @@ public class GetVerifiedStatusTest {
         } catch (InvalidResponseDataException e) {
             e.printStackTrace();
             fail();
-        } catch (IOException e) {
+        } catch (PayPalErrorException e) {
+            e.printStackTrace();
+            fail();
+        } catch (RequestAlreadyMadeException e) {
+            e.printStackTrace();
+            fail();
+        } catch (PaymentExecException e) {
+            e.printStackTrace();
+            fail();
+        } catch (AuthorizationRequiredException e) {
+            e.printStackTrace();
+            fail();
+        } catch (PaymentInCompleteException e) {
+            e.printStackTrace();
+            fail();
+        } catch (ReceiversCountMismatchException e) {
             e.printStackTrace();
             fail();
         }
         
-        assertNotNull(response);
-        
-        AccountStatus status = response.getAccountStatus();
-        assertEquals(AccountStatus.VERIFIED, status);
-        
-        UserInfo userInfo = response.getUserInfoType();
-        
-        assertEquals("Brandon", userInfo.getFirstName());
-        assertEquals("Donnelson", userInfo.getLastName());
+        assertNotNull(payResponse.getPayKey());
     }
 
     private APICredential getCredentials() {

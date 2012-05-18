@@ -20,20 +20,20 @@ import java.util.List;
 public class ParallelPay {
 
     /*
-      * Required applicationName
-      */
+     * Required applicationName
+     */
     protected String applicationName;
     /*
-      * Required APICredential
-      */
+     * Required APICredential
+     */
     protected APICredential credentialObj;
     /*
-      * Required Receiver info
-      */
+     * Required Receiver info
+     */
     protected List<Receiver> receivers;
     /*
-      * Required Environment
-      */
+     * Required Environment
+     */
     protected ServiceEnvironment env;
     /*
      * Required memo
@@ -64,8 +64,8 @@ public class ParallelPay {
      */
     protected String ipnURL;
     /*
-	 * Optional Sender Email
-	 */
+     * Optional Sender Email
+     */
     protected String senderEmail;
 
     // internal field
@@ -74,8 +74,8 @@ public class ParallelPay {
     protected int numberOfReceivers;
 
     /*
-    * Default constructor
-    */
+     * Default constructor
+     */
     public ParallelPay(int numberOfReceivers) throws NotEnoughReceivers {
         if (numberOfReceivers < 2) {
             // throw exception
