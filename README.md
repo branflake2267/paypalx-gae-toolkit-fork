@@ -1,5 +1,4 @@
-Forked by: http://Arcbees.com
-Created By [Arcbees.com](http://arcbees.com)
+Forked and Maintained by [Arcbees.com](http://arcbees.com)
 
 # How To Use
 
